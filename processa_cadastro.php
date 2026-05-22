@@ -23,7 +23,7 @@ $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 // tipo por padrão cliente
 $stmt = $pdo->prepare("INSERT INTO usuarios (nome,email,senha_hash,cpf,endereco,telefone,data_nascimento,tipo) VALUES (?,?,?,?,?,?,?,'cliente')");
 try {
-    $stmt->execute([$nome,$email,$senha_hash]);
+    $stmt->execute([$nome,$email,$senha_hash,$cpf,$endereco,$telefone,$data_nascimento]);
     
     // GATILHO DO MODAL ADICIONADO AQUI
     $_SESSION['msg_sucesso'] = "Sua conta foi criada com sucesso! Agora você já pode fazer o login.";
