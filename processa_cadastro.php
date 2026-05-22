@@ -7,6 +7,11 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $nome      = trim($_POST['nome'] ?? '');
 $email     = trim($_POST['email'] ?? '');
 $senha     = $_POST['senha'] ?? '';
+$cpf     = $_POST['cpf'] ?? '';
+$endereco     = $_POST['endereco'] ?? '';
+$telefone     = $_POST['telefone'] ?? '';
+$data_nascimento     = $_POST['data_nascimento'] ?? '';
+
 
 if ($nome === '' || $email === '' || $senha === '') {
     header("Location: login.php?erro=campos");
