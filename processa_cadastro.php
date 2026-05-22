@@ -21,7 +21,7 @@ if ($nome === '' || $email === '' || $senha === '') {
 $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
 // tipo por padrão cliente
-$stmt = $pdo->prepare("INSERT INTO usuarios (nome,email,senha_hash,tipo) VALUES (?,?,?,'cliente')");
+$stmt = $pdo->prepare("INSERT INTO usuarios (nome,email,senha_hash,cpf,endereco,telefone,data_nascimento,tipo) VALUES (?,?,?,?,?,?,?,'cliente')");
 try {
     $stmt->execute([$nome,$email,$senha_hash]);
     
