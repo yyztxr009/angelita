@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($senha !== $confirma) {
         $erro = "As senhas não coincidem.";
-    } elseif (strlen($senha) < 6 || strlen($senha) > 10) {
-        $erro = "Senha deve ter entre 6 e 10 caracteres.";
+    } elseif (strlen($senha) < 6 || strlen($senha) > 12) {
+        $erro = "Senha deve ter entre 6 e 12 caracteres.";
     } else {
         $hash = password_hash($senha, PASSWORD_DEFAULT);
 
